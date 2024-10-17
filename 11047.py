@@ -2,16 +2,13 @@ import sys
 
 n , k = map(int, sys.stdin.readline().split())
 
-cost = []
+cost = [int(sys.stdin.readline()) for _ in range(n)]
 
-for _ in range(n):
-    cost.append(int(sys.stdin.readline().strip()))
-
-cost.sort(reverse=True)
+cost = cost[::-1]
 cnt = 0
 i=0
 
-while k>0:
+while k > 0:
     num = k // cost[i]
     k = k%cost[i]
     cnt += num
