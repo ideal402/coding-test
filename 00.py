@@ -1,13 +1,16 @@
 import sys
 
-n, k = map(int, sys.stdin.readline().split())
-cnt = 0
+n = int(sys.stdin.readline().strip())
+lst = list(map(int, sys.stdin.readline().split()))
 
-while n > 1:
-    if n%k == 0:
-        n //= k
-    else:
-        n -= 1
-    cnt += 1
+lst.sort()
 
-print(cnt)
+
+target = 1
+
+for x in lst:
+    if target < x:
+        break
+    target += x
+
+print(target)
