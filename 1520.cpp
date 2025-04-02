@@ -8,7 +8,6 @@ int n, m;
 int dfs(int x, int y, vector<vector<int>>& maps, vector<vector<int>>& v){
     
     if (x == m-1 && y == n-1){
-        cout << "asdf";
         return 1;
     }
     if (v[y][x] != -1){
@@ -26,7 +25,7 @@ int dfs(int x, int y, vector<vector<int>>& maps, vector<vector<int>>& v){
 
         if (0<= nx && nx < m && 0 <= ny && ny < n){
             if(maps[y][x] > maps[ny][nx]){
-                v[ny][nx] += dfs(nx, ny, maps, v);
+                v[y][x] += dfs(nx, ny, maps, v);
             }
         }
     }
@@ -47,14 +46,7 @@ int main(){
     }
 
 
-    cout << dfs(0,0,maps,v);
+    cout << dfs(0,0,maps,v) << endl;
     
-    for(auto x: v){
-        for(auto y: x){
-            cout << y << " ";
-        }
-        cout <<"\n";
-    }
-
     return 0;
 }
