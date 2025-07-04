@@ -3,7 +3,7 @@ import math
 n = int(sys.stdin.readline())
 
 for _ in range(n):
-    x1, y1, r1, x2,y2, r2 = map(int, sys.stdin.readline().split())
+    x1, y1, r1, x2, y2, r2 = map(int, sys.stdin.readline().split())
 
     length = math.sqrt(((x1-x2)**2 + (y1-y2)**2))
     
