@@ -1,23 +1,20 @@
 import sys
-import heapq as hq
 
 a, b = map(int, sys.stdin.readline().split())
 
-def add(a):
-    a = str(a)
-    return int(a[:-1])
-
-arr = [(b, 0)]
+arr = [(b, 1)]
 ans = float('inf')
 
 while(arr):
     num, cnt = arr.pop()
-
+    if num <= 0:
+        continue
+    
     if num == a:
         ans = min(ans, cnt)
 
     if num % 10 == 1:
-        arr.append((add(a), cnt+1))
+        arr.append((num//10, cnt+1))
     
     if num % 2 == 0:
         arr.append((num//2, cnt+1))
