@@ -7,6 +7,9 @@ int n;
 vector<pair<int, int>> a;
 
 int main(){
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    
     int temp;
     cin >> n;
 
