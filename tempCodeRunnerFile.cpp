@@ -1,32 +1,8 @@
-#include <iostream>
-#include <vector>
 
-using namespace std;
+    // for(auto x: temp){
+    //     cout << x << " ";
+    // }
+    // cout << "\n";
 
-int n;
-vector<pair<int, int>> a;
 
-int main(){
-    int temp;
-    cin >> n;
-
-    for(int i=0; i<n; i++){
-        cin >> temp;
-
-        while(!a.empty() && a.back().first < temp){
-            a.pop_back();
-        }
-
-        if(a.empty()){
-            cout << 0 << " ";
-        }
-        else{
-            cout << a.back().second << " ";
-        }
- 
-        a.push_back({temp, i+1});
-
-    }
-
-    return 0;
-}
+    // cout << arr[temp.back()-1] << " " <<  temp.front() << "\n";
