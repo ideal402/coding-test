@@ -7,14 +7,12 @@ name_dict = {}
 
 # 명단 업데이트
 for _ in range(n):
-    name, enter = map(str, sys.stdin.readline().split())
+    name, state = map(str, sys.stdin.readline().split())
 
-    #이름이 명단에 없으면 추가
     if name in name_dict:
-        name_dict[name] = enter
-    #있을 때 상태변경
+        name_dict[name] = state
     else:
-        name_dict[name] = enter
+        name_dict[name] = state
 
 #들어와 있는 사람 리스트 선언
 enter_list = []
