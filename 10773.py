@@ -2,15 +2,14 @@ import sys
 
 n = int(sys.stdin.readline())
 arr = []
+
 for _ in range(n):
-    temp = int(sys.stdin.readline())
+    
+    i = int(sys.stdin.readline())
 
-    if temp == 0:
-        arr.pop()
+    if i > 0:
+        arr.append(i)
     else:
-        arr.append(temp)
+        arr.pop()
 
-if arr:
-    print(sum(arr))
-else:
-    print(0)
+print(sum(arr))

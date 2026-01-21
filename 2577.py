@@ -1,15 +1,18 @@
 import sys
 
-a = int(sys.stdin.readline())
-b = int(sys.stdin.readline())
-c = int(sys.stdin.readline())
+n = 3
+ans = 1
 
-dic = {i:0 for i in range(0,10)}
+for i in range(n):
+    temp = int(sys.stdin.readline())
+    ans *= temp
 
-temp = a*b*c
+arr = [0] * 10
 
-for i in str(temp):
-    dic[int(i)] += 1
+while (ans > 0):
+    arr[ans % 10] += 1
+    ans = ans // 10
 
-for key, item in dic.items():
-    print(item)
+for x in arr:
+    print(x)
+
