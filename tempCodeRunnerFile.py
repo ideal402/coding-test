@@ -1,4 +1,3 @@
 
-print(mod)
-temp = temp / 10
-print(temp)
+    lc[idx] = ord(lc_name) - ord("A")
+    rc[idx] = ord(rc
