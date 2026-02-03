@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#define INF 100001
+#define INF 10000000
 
 int n, m;
 int d[104][104];
@@ -16,16 +16,12 @@ int main(){
 
     for(int i = 0; i < n; i++){
         fill(d[i], d[i] + n, INF);    
-    }
-
-    for(int i = 0; i < n; i++){
         d[i][i] = 0;
     }
 
     cin >> m;
 
     int a, b, cost;
-
     for(int i = 0; i < m; i++){
         cin >> a >> b >> cost;
         if(d[a-1][b-1] > cost){
@@ -45,7 +41,8 @@ int main(){
 
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
-            cout << d[i][j] << " ";   
+            if(d[i][j] >= INF) cout << 0 << " ";
+            else cout << d[i][j] << " ";   
         }
         cout << "\n";
     }
