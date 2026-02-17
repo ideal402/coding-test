@@ -23,7 +23,7 @@ int main(){
     cout << "<";
     while(!a.empty()){
 
-        for(int i = 0; i < k; i++){
+        for(int i = 0; i < k-1; i++){
             idx++;
             if(idx == a.end()) idx = a.begin();
         }
@@ -33,7 +33,7 @@ int main(){
 
         if(idx == a.end()) idx = a.begin();
         
-        if(!a.empty()) cout << " ,";
+        if(!a.empty()) cout << ", ";
     }
     cout << ">";
 
