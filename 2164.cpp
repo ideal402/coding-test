@@ -18,12 +18,9 @@ int main(){
         q.push(i+1);
     }
 
-    while (!q.empty())
+    while (q.size() != 1)
     {
         q.pop();
-        
-        if(q.size()==1) break;
-
         int x = q.front();
         q.push(x);
         q.pop();
