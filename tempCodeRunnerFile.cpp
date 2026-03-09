@@ -1,35 +1,4 @@
-#include <iostream>
-#include <algorithm>
-#include <queue>
-
-using namespace std;
-
-
-queue<int> q;
-int n;
-
-int main(){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    
-    cin >> n;
-
-    for(int i = 0; i < n; i++){
-        q.push(i+1);
-    }
-
-    while (!q.empty())
-    {
-        q.pop();
-        
-        if(q.size()==1) break;
-
-        int x = q.front();
-        q.push(x);
-        q.pop();
-    }
-    
-    cout << q.front();
-
-    return 0;
-}
+for(int i = 1; i < n+1; i++){
+                cout << visit[i] << " ";
+            }
+            
