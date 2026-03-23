@@ -22,13 +22,13 @@ bool check(int x, int y, int size){
 void cut(int x, int y,int size){
 
     if(check(x, y, size)){
-        ans[board[x][y]] += size*size;
+        ans[board[x][y]] += 1;
         return;
     }
 
     for (int i = x; i < x+size; i += size/2) {
         for (int j = y; j < y+size; j += size/2) {
-            cut(i, y, size/2);
+            cut(i, j, size/2);
         }   
     }
 }
@@ -44,6 +44,8 @@ int main() {
             cin >> board[i][j];
         }
     }
+
+    cut(0,0,n);
 
     for(auto a: ans){
         cout << a << "\n";
