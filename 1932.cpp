@@ -28,6 +28,8 @@ int main(){
         }
     }
 
+    d[1][1] = c[1][1];
+    
     for(int i = 2; i <= n; i++){
         for(int j = 1; j <= i; j++){
             if(j==i) d[i][j] = d[i-1][j-1] + c[i][j];
