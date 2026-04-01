@@ -7,10 +7,10 @@ int n;
 pair<int, int> f[100005];
 
 bool comp(const pair<int, int>& a, const pair<int, int> &b){
-    if (a.first == b.first) {
-        return a.second > b.second; 
+    if (a.second == b.second) {
+        return a.first > b.first; 
     }
-    return a.first < b.first;
+    return a.second > b.second;
 }
 
 int main(){
@@ -22,27 +22,31 @@ int main(){
     for(int i = 0; i < n; i++){
         int sm, sd, em, ed;
         cin >> sm >> sd >> em >> ed;
-        f[i] = make_tuple(sm*100+sd, em*100+ed);
+        f[i] = {sm*100+sd, em*100+ed};
     }
 
     sort(f, f+n, comp);
 
-
     int cur = 301;
-    int end = 1130;
-
+    int end = 1201;
     int ans = 0;
-
-    for(int i = 0; i < n; i++){
-        if(f[i].first < cur) {
-            cur = f[i].second; 
-            ans++;
+    
+    while (cur < end){
+        int next = cur; 
+        for(int i = 0; i < n; i++){
+            if(f[i].first <= cur && f[i].second > next) {
+                next = f[i].second; 
+            }
         }
-        if(cur >= end){
-            cout << ans;
+        if(next == cur){
+            cout << 0;
             return 0;
         }
+        ans++;
+        cur = next;
     }
+    
+    cout << ans;
 
 
     return 0;
