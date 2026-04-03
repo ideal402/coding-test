@@ -36,7 +36,7 @@ int main(){
         for(int j = 0; j < n; j++){
             cin >> c;
             if(i==j) continue;
-            edge.push_back(make_tuple(e,i,j));
+            edge.push_back(make_tuple(c,i,j));
         }
     }
 
